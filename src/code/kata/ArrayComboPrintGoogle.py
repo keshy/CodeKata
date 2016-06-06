@@ -25,18 +25,22 @@ __author__ = 'shankar'
 # 12
 # 1 2
 
-def PrintCombo(arr, n=0):
+
+def PrintCombo(arr, start, str):
     if not arr:
         return None
 
-    if len(arr) == n:
-        return arr
+    if (start == len(arr)):
+        print(str)
+        return
 
-    for i in xrange(n, len(arr)):
-        print("(" + ''.join(arr[0:n]) + ')' + '(' + ''.join(arr[n:i + 1]) + ')' + '(' + ''.join(arr[i + 1:]) + ')')
+    for i in xrange(start, len(arr)):
+        PrintCombo(arr, i+1, str + '(' + ''.join(arr[start:i+1]) + ')')
 
-    return PrintCombo(arr, n=n + 1)
+    return
+
+
 
 
 if __name__ == "__main__":
-    PrintCombo(['1', '2', '3', '4'])
+    PrintCombo(['1', '2', '3', '4'], 0, '')
