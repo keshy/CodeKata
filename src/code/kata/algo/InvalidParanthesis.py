@@ -44,5 +44,5 @@ def valid_strings(invalid_string, hide, results=set(), ejected=set()):
 # Bug: this does not work for cases where there are more than one parenthesis to be removed
 ##################
 if __name__ == '__main__':
-    str = '()))'
+    str = '(v)())()'
     print(valid_strings(str, 0))
